@@ -1,4 +1,23 @@
-# Data Project README file
+# Customer Lifetime Value Analysis & Forecast
+
+CLV or CLTV is the total profit generated from one client over their lifetime, after COGS. It is a metric highly used by subscription base companies such as Ecommerce or SaaS. It is cheaper to retain a customer than to acquire a new one.
+
+This metric is often compared with CAC (Customer Acquisition Cost). LTV should always be higher than your CAC, otherwise you are losing money. Simply put, what you pay to acquiare a customer should be less than what the customer will bring in terms of revenue. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
 
 The README file describes the essence of the project playing the most important role. Most visitors will simply scroll down about twice on the README and leave if they are not interested. So, the README file should provide the reason **why** to checkout your project!!!). 
 Bearing that in mind, your job is to: 
