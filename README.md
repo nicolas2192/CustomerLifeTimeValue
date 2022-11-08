@@ -1,11 +1,70 @@
-# Customer Lifetime Value Analysis & Forecast
+# Customer Analysis
+Cohort, Retention, Lifetime Value & RFM Analysis using Machine Learning
+---
+
+## :: Initial Exploratory Analysis
+
+We have 9 month worth of data where each row represents one transaction. 
+There is a total of 109.059 entries, however, after removing outliers, we will end up with 50.158 rows.
+
+<p align="center">
+  <img width="814" height="348" src="readme/data_overview.png">
+</p>
+
+Outliers will be removed, what will give us a total of rows. From left to right, a boxplot showing count and sum of transactions aggregated by user ID, and a histogram of the number of transactions aggregated by user ID. Most of the customers perfomed 10 or less transactions.
+
+<p align="center">
+  <img width="1768" height="668" src="readme/outliers.png">
+</p>
+
+
+## :: Cohort and Retention Analysis
+
+Cohorts are groups of customers that share some similar characteristics. When it comes to retention and churn analysis, we usually aggregate users by joining date. For example, users that joined in the same month will fall in the same cohort. 
+
+On the left we have the number of unique customers per cohort and on the right the retention cohort. We can see how the number of new unique users decreases as time goes by as well as the retention. Interesting fact is that the first month for each cohort does not equal to 100%, this is because some users didnt perform any transaction the joining month.
+
+<p align="center">
+  <img width="2000" height="900" src="readme/retention.png">
+</p>
+
+
+
+## :: Customer Lifetime Value
 
 CLV or CLTV is the total profit generated from one client over their lifetime, after COGS. It is a metric highly used by subscription base companies such as Ecommerce or SaaS. It is cheaper to retain a customer than to acquire a new one.
 
 This metric is often compared with CAC (Customer Acquisition Cost). LTV should always be higher than your CAC, otherwise you are losing money. Simply put, what you pay to acquiare a customer should be less than what the customer will bring in terms of revenue. 
 
+The following data is required to compute LTV:
+- Number of clients in the cohort.
+- Number of orders per client.
+- Number of transactions done by the cohort of clients.
+- Average order value.
+- Gross Margin Percentage: How much you make after COGS are deducted.
+- Churn Rate: How many customers dont come back.
+- Average Lifetime in months: 1 divided by churn rate.
+
+### Churn Rate
+The number of clients that leave after using your app or service. The lower the rate the better. It is cheaper to milk already existing users than acquiring new ones, thats why churn rate is an important metric to keep track of.
+
+The challenge when it comes to analyzing churn rate is what values to use, not the equation impletentation (it is a simple percentage difference). The values (or the churn definition) that will be used should make sense.
+
+8% is usually the threshold when it starts to become a problem. However, this number highly depends on the sector and industry the company is in.
+
+Things to keep in mind when computing churn rate:
+- Do not mix different products. You should be computing churn rates per product.
+- For seasonal products. Compare YoY instead of MoM.
+- If possible compare customer churn rate to revenue churn rate. This could give additional insight regarding the direction of the company.
+
+### Lifetime value analysis
+
+Lifetime value calculation may vary from business to business but in general termns it would be something like: `Average Total Order Amount * Average Number of Purchases Per Timeframe * Retention Rate`. For our example, however, we will be using the following equation:
+`CLTV = (Transactions * Avg Order Value * Gross Margin * Avg Lifetime) / Number of Customers`.
 
 
+
+## :: RFM Analysis with Machine Learning
 
 
 
