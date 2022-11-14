@@ -30,10 +30,10 @@ A cohort is a group of customers that share similar features. When it comes to r
   <img width="700" height="350" src="readme/retention.png">
 </p>
 
-On the left we have the number of unique customers per cohort while on the right the retention per cohort and month. Some conclusions are:
-- 1. The number of users is declining month by month. 
+On the left image we have the number of unique customers per cohort while on the right one, the retention per cohort and month. Some conclusions are:
+- 1. The number of new users is declining by the month. 
 - 2. First month (period) does not add up 100% this is due to the fact that there are users that didnt perform any purchase the month they joined.
-- 3. Retention decreases fast, going from ~80% to ~15% during the first 3 months.
+- 3. Retention decreases quickly, going from ~80% to ~15% during the first 3 months.
 
 ## :chart_with_upwards_trend: RFM Analysis with Machine Learning
 
@@ -59,9 +59,9 @@ In our analysis, we create the following table:
 
 ### :deciduous_tree: Machine Learning Model
 
-This machine learning model attempts to understand the each customer's behavior, it wont be used to predict what the user will be doing next, but to understand what each customer should have done giving its past performance. 
+This machine learning model attempts to understand each customer's behavior, it won't be used to predict what the user will be doing next, but to understand what each customer should have done giving its past performance. 
 
-Since the first months of the year is where we have the most events, we will take January, February and March for training and the April as our test data.
+Since the first months of the year is where we have the highest number of events, we will take January, February and March for training and the April as our test data.
 
 The model is a Random Forest Classifier, it performs with a 90% accuracy for test data. 
 
@@ -71,13 +71,13 @@ Recency is the most important feature while avg_time_buy does not add too much t
   <img width="500" height="350" src="readme/feature_importance.png">
 </p>
 
-Once we have the model trained, we use it to predict what should have happened in the fourth month. Lastly we compare the prediction `y_pred` with the reality `is_active`. This will help us to answer the previously stated business questions.
+Once the model trained, we predict what should have happened in the fourth month. Lastly we compare the prediction `y_pred` with the reality `is_active`. This will help us to answer the previously stated business questions.
 
 ### :grey_question: Business Questions
 
-**Which customers had a high probability to transact but didnt do anything in the next 30 days.**
+**Which customers had a high probability to transact but didn't do anything in the next 30 days.**
 
-We compare `y_pred` and `is_active`. In other words we check those users who should have transacted according to our model, but actually, stayed dormant. By creating a tailored marketing campaign we could get these users attention and enhance engagement.
+By comparing  `y_pred` and `is_active` we check what users should have transacted according to our model, but actually, stayed dormant. Creating a tailored marketing campaign we could get these users attention and enhance engagement.
 
 <p align="center">
   <img width="550" height="80" src="readme/bq1.png">
